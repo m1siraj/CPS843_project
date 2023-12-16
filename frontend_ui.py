@@ -13,6 +13,7 @@ from PIL import Image
 
 # Sample Dash app with Bootstrap styles
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
+server = app.server
 
 data = []
 app.layout = html.Div(style={'alignItems': 'center', 'justifyContent': 'center', 'padding': '0 25%'}, children=[
