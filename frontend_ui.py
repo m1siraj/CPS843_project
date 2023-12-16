@@ -111,10 +111,14 @@ def update_output(n_clicks, contents, filename):
     if contents is None:
         return dbc.Alert("Please upload the image first", color="danger", dismissable=True),
 
-    # Load the image 
-    print(filename)
-    img = cv2.imread(filename)
-    print('something')
+    # Decode the uploaded image
+    image = decode_image(contents)
+    image.save('uploaded_image.png')
+    
+    img = cv2.imread('uploaded_image.png')
+    
+    
+    
     # Convert the image to grayscale 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
     
@@ -162,7 +166,11 @@ def update_output(n_clicks, contents, filename):
         return dbc.Alert("Please upload the image first", color="danger", dismissable=True),
 
     # reading image 
-    img = cv2.imread(filename)
+    # Decode the uploaded image
+    image = decode_image(contents)
+    image.save('uploaded_image.png')
+    
+    img = cv2.imread('uploaded_image.png')
     
     # converting image into grayscale image 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
