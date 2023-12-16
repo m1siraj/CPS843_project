@@ -3,3 +3,4 @@ dash-bootstrap-components
 numpy
 opencv-python
 Pillow
+gunicorn
